@@ -48,11 +48,11 @@ function findId(product) {
 
 
 
-    if ( linkDelProducto == urlDelNavegador  ) {
+    if (linkDelProducto == urlDelNavegador) {
         console.log(product)
-         createCard(product)
-     }
-   }
+        createCard(product)
+    }
+}
 
 
 cards.forEach(findId)
