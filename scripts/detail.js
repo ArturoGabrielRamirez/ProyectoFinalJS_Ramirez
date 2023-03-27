@@ -1,5 +1,5 @@
-import { createCard } from "./utils";
-import { cards } from "./utils";
+import { createCard, cards, carrito } from "./utils";
+
 
 function findId(product) {
   const linkDelProducto = product.linkDetail

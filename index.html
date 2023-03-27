@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-full" lang="en">
 
 <head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -9,32 +10,39 @@
   <title>Centro Pokemon</title>
 </head>
 
-<body class="bg-slate-200">
-  <header>
-    <h1 class="">
-      <a href="/index.html">test</a> 
+<body class="bg-slate-200 flex flex-col h-full ">
+
+  <header class="flex place-content-between	bg-red-700 items-center	px-4 py-4">
+    <h1 class="place-content-start text-4xl	text-neutral-300">
+      <a href="/index.html">test</a>
     </h1>
-    <nav>
-      <a href="/views/pokeballs.html">Categoria 1</a>
-      <a href="/views/pociones.html">Categoria 2</a>
-      <a href="/views/contacto.html/">Contacto</a>
-      <a href="/views/carrito.html">Carrito</a>
+    <nav class="flex place-content-end text-neutral-300">
+      <a class="hover:text-yellow-500 mx-4" href="/views/pokeballs.html">Categoria 1</a>
+      <a class="hover:text-yellow-500 mx-4" href="/views/pociones.html">Categoria 2</a>
+      <a class="hover:text-yellow-500 mx-4" href="/views/contacto.html/">Contacto</a>
+      <button class="hover:text-yellow-500 mx-4 material-icons">
+        shopping_cart
+      </button>
+      <span class="icon_count"></span>
     </nav>
   </header>
-  <main>
+
+  <main class="grow">
     <section
       class="card-container px-4 py-4 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8">
     </section>
   </main>
-  <footer>
+
+  <footer class="flex place-content-end bg-red-700 text-neutral-300 p-4">
     <nav>
-      <a href="https://www.instagram.com/">Instagram</a>
-      <a href="https://www.youtube.com/">Youtube</a>
-      <a href="https://www.twitter.com/">Twitter</a>
-      <a href="https://www.facebook.com/">Facebook</a>
+      <a class="hover:text-yellow-500 mx-4" href="https://www.instagram.com/">Instagram</a>
+      <a class="hover:text-yellow-500 mx-4" href="https://www.youtube.com/">Youtube</a>
+      <a class="hover:text-yellow-500 mx-4" href="https://www.twitter.com/">Twitter</a>
+      <a class="hover:text-yellow-500 mx-4" href="https://www.facebook.com/">Facebook</a>
     </nav>
   </footer>
   <script type="module" src="/scripts/main.js"></script>
+
 </body>
 
 </html>
