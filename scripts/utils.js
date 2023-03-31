@@ -93,6 +93,14 @@ export function createCard(product) {
   card_content.append(card_title, card_detail, card_price, card_stock, pokeball_buttons, card_button_cart, card_detail_link)
   pokeball_buttons.append(card_button_suma, card_counter, card_button_resta)
 }
+export function emptyCart() {
+  carrito.length = 0
+  localStorage.clear() 
+
+  const containerCarrito= document.getElementById("carrito__container")
+  
+  containerCarrito.innerHTML = ""
+}
 
 export function loadToStorage() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || []
@@ -114,7 +122,7 @@ export function restar() {
   }
 }
 
-export function updateCartCounter(carrito) {
+export function updateCartCounter() {
   const cartCounter = document.getElementById("cart-counter")
   const totalItems = carrito.reduce((total, item) => total + item.count, 0)
   cartCounter.textContent = totalItems
@@ -123,6 +131,18 @@ export function updateCartCounter(carrito) {
 export function mostrarCarrito(carrito) {
   const containerCarrito = document.getElementById("carrito__container")
   containerCarrito.innerHTML = ""
+  const buttonEmptyCart = document.createElement("button")
+
+  buttonEmptyCart.className = "text-white border border-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-4 py-2 text-center mt-2 dark:border-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 w-full block bg-red-900"
+  buttonEmptyCart.innerText = "Vaciar carrito"
+
+  buttonEmptyCart.addEventListener("click", () => {
+    emptyCart()
+    updateCartCounter()
+  })
+
+
+
   carrito.forEach((item) => {
 
     const itemCarrito = document.createElement("div")
@@ -138,11 +158,17 @@ export function mostrarCarrito(carrito) {
     infoItem.innerText = `${item.title} x ${item.count}`
     infoPrecio.innerText = `$${item.price * item.count}`
     imagenProducto.src = item.image
+
+
     itemCarrito.append(imagenProducto, infoItem, infoPrecio)
+
     containerCarrito.append(itemCarrito)
-    itemCarrito.append(infoItem)
   })
+
+  containerCarrito.append(buttonEmptyCart)
 }
+
+
 
 export function finalizarCompra(e) {
   e.preventDefault()
@@ -177,7 +203,7 @@ export function finalizarCompra(e) {
   })
     .then((response) => {
       if (response.ok) {
-        carrito.length = 0
+        emptyCart()
         saveToStorage(carrito)
         updateCartCounter(carrito)
         mostrarCarrito(carrito)
