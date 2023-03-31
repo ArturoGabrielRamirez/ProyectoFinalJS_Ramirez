@@ -1,14 +1,12 @@
-import { createCard, cards, carrito } from "./utils";
+import { createCard,loadToStorage } from "./utils";
 
+const params = window.location.search
 
-function findId(product) {
-  const linkDelProducto = product.linkDetail
-  const urlDelNavegador = window.location.pathname + window.location.search
+loadToStorage()
 
-  if (linkDelProducto == urlDelNavegador) {
-    createCard(product)
-  }
-}
-
-
-cards.forEach(findId)
+fetch(`https://2jlyy.wiremockapi.cloud/productos${params}`)
+  .then(response => response.json())
+  .then(productos => {
+    createCard(productos)
+  })
+  .catch(error => console.error(error))

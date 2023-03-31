@@ -1,166 +1,13 @@
+import { Notify } from "notiflix"
 
-export const cards = [{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/1.jpg",
-  alt: "Gorros con tematica Pokemon",
-  title: "Gorros Pokemon",
-  description: "Gorros con diseño Pokemon a eleccion",
-  price: 1800,
-  stock: 7,
-  id: 1,
-  linkDetail: "/views/detail.html?id=1",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/2.jpg",
-  alt: "Funko Pop Eevee",
-  title: "Funko Pop Eevee",
-  description: "Muñeco Funko Pop coleccionable",
-  price: 2100,
-  stock: 7,
-  id: 2,
-  linkDetail: "/views/detail.html?id=2",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/3.jpg",
-  alt: "Pokeball Plus",
-  title: "Pokeball Plus",
-  description: "Joystick inalámbrico Ninintendo ",
-  price: 2250,
-  stock: 6,
-  id: 3,
-  linkDetail: "/views/detail.html?id=3",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/4.jpg",
-  alt: "Pikachu Toy",
-  title: "Pikachu Toy",
-  description: "Muñecos picachu y pichu coleccionables",
-  price: 1890,
-  stock: 5,
-  id: 4,
-  linkDetail: "/views/detail.html?id=4",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/5.jpg",
-  alt: "Llaveros Pokemon",
-  title: "Llaveros Pokemon",
-  description: "Coleccion Aleatoria de llaveros. Hazte con todos!",
-  price: 1500,
-  stock: 20,
-  id: 5,
-  linkDetail: "/views/detail.html?id=5",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/6.jpg",
-  alt: "Juego Pokemon Ruby y Zafiro para Nintendo 3DS",
-  title: "Pokemon Ruby y Zafiro",
-  description: "Hazte con este combo del 40% con esta super oferta",
-  price: 1980,
-  stock: 30,
-  id: 6,
-  linkDetail: "/views/detail.html?id=6",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/7.jpg",
-  alt: "Juego Pokemon Ultra Sol y Ultra Luna",
-  title: "Pokemon Ultra Sol y Ultra Luna",
-  description: "Ya disponible la nueva region!",
-  price: 4200,
-  stock: 20,
-  id: 7,
-  linkDetail: "/views/detail.html?id=7",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/8.jpg",
-  alt: "Estuche con tematica Pokemon para Nintendo Switch",
-  title: "Estuche Nintendo",
-  description: "Transporta tu consola con la mayor proteccion y comodidad",
-  price: 1700,
-  stock: 10,
-  id: 8,
-  linkDetail: "/views/detail.html?id=8",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/evees.jpg",
-  alt: "Peluches coleccionables de evoluciones de Eevee",
-  title: "Peluches coleccionables",
-  description: "Peluche de evee y sus evoluciones",
-  price: 4350,
-  stock: 18,
-  id: 9,
-  linkDetail: "/views/detail.html?id=9",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/perladiamante.jpg",
-  alt: "Juego Pokemon Perla y Diamante",
-  title: "Pokemon Perla y Diamante",
-  description: "Redescubri esta maravillosa entrega!",
-  price: 3980,
-  stock: 10,
-  id: 10,
-  linkDetail: "/views/detail.html?id=10",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/headphones.png",
-  alt: "Auriculares con tematica de Pokebola",
-  title: "Headphones",
-  description: "Auriculares Pokemon con cancelador de ruidos",
-  price: 5350,
-  stock: 8,
-  id: 11,
-  linkDetail: "/views/detail.html?id=11",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/sun.jpg",
-  alt: "Juego Pokemon Sun",
-  title: "Pokemon Sun",
-  description: "Juego Pokemon Sun para Nintendo 3DS",
-  price: 2999,
-  stock: 9,
-  id: 12,
-  linkDetail: "/views/detail.html?id=12",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/moon.jpg",
-  alt: "Juego Pokemon Moon",
-  title: "Pokemon Moon",
-  description: "",
-  price: 2999,
-  stock: 11,
-  id: 13,
-  linkDetail: "/views/detail.html?id=13",
-  linkCart: "/"
-},
-{
-  image: "https://arturogabrielramirez.github.io/Proyecto_Ramirez/images/joystick.jpg",
-  alt: "Joystick amarillo con tematica de Pikachu",
-  title: "Joystick",
-  description: "Joystick Pokemon inalambrico. con alta capacidad de carga",
-  price: 3990,
-  stock: 5,
-  id: 14,
-  linkDetail: "/views/detail.html?id=14",
-  linkCart: "/"
-},
-]
-
-export const carrito = []
+export const carrito = localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : []
 export let count = 0
 
+export function saveToStorage(carrito) {
+  localStorage.setItem("carrito", JSON.stringify(carrito))
+}
 
 export function createCard(product) {
-
   const card = document.createElement("div")
   const card_img = document.createElement("img")
   const card_content = document.createElement("div")
@@ -172,36 +19,31 @@ export function createCard(product) {
   const section = document.querySelector(".card-container")
   const pokeball_buttons = document.createElement("div")
 
-
   card_button_cart.addEventListener("click", () => {
-
     let countProduct = count
-    product.count = countProduct
-
+    let productCopy = { ...product, count: countProduct }
+    let found = false
     carrito.forEach((item) => {
-      if (product.id == item.id) {
-        console.log(item.count)
-        console.log(count)
+      if (productCopy.id == item.id) {
         item.count = item.count + count
-      } else {
-        carrito.push(product)
+        found = true
       }
     })
-    if (carrito.length == 0) {
-      carrito.push(product)
+    if (!found) {
+      carrito.push(productCopy)
     }
-    console.log(carrito)
+    saveToStorage(carrito)
+    updateCartCounter(carrito)
   })
 
-  card.className = "card shadow-md hover:shadow-xl hover:cursor-pointer hover:scale-110 duration-300 bg-white"
+  card.className = "card shadow-sm hover:shadow-xl hover:cursor-pointer hover:scale-110 duration-300 bg-white shadow-[rgba(0,0,0,0.5)] border-[1px] border-gray-500 rounded animate-fade-in"
   card_img.className = "card__img w-full h-64 object-cover shadow-md shadow-gray-400"
-  card_content.className = "card__content p-2"
+  card_content.className = "card__content p-2 bg-[#EF9A9F]"
   card_title.className = "card__title text-2xl mb-2 truncate"
   card_price.className = "card__price text-sm"
-  card_stock.className = "card__stock text-sm text-gray-400"
-  card_button_cart.className = "card__button-cart material-icons text-red-700 hover:text-white border border-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-8 py-4 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 text-xl"
-  card_detail_link.className = "card__detail-link text-red-700 hover:text-white border border-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-4 py-2 text-center mt-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 w-full block"
-
+  card_stock.className = "card__stock text-sm text-white"
+  card_button_cart.className = "card__button-cart material-icons text-white border border-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-4 py-2 text-center mt-2 dark:border-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 w-full block bg-red-900"
+  card_detail_link.className = "card__detail-link text-white border border-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-4 py-2 text-center mt-2 dark:border-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 w-full block bg-red-900"
 
   card_img.src = product.image
   card_img.alt = product.alt
@@ -217,7 +59,6 @@ export function createCard(product) {
   let card_counter = ""
   let card_detail = ""
 
-
   if (window.location.pathname != "/" && window.location.pathname != "/index.html") {
     card_detail = document.createElement("p")
     card_button_resta = document.createElement("button")
@@ -226,11 +67,11 @@ export function createCard(product) {
 
     card_detail_link = ""
 
-    card_img.className = "bg-white w-full max-w-[500px] shadow-lg shadow-gray-400"
-    card.className = "flex mx-auto gap-7"
+    card_img.className = "bg-white w-full max-w-[500px] shadow-sm shadow-[rgba(0,0,0,0.5)]"
+    card.className = "flex mx-auto gap-7 shadow-sm shadow-[rgba(0,0,0,0.5)]"
     card_detail.className = "card__detail"
     pokeball_buttons.className = "flex flex-col w-32 mt-4 items-center justify-center pokeball__buttons relative "
-    card_counter.className = "card__counter absolute bg-white z-10 rounded-full border-black border-4 w-10 h-10 flex justify-center items-center font-bold"
+    card_counter.className = "card__counter  absolute bg-white z-10 rounded-full border-black border-4 w-10 h-10 flex justify-center items-center font-bold"
     card_button_suma.className = "material-icons border-black text-white bg-red-700 hover:bg-red-500 font-bold w-32 h-16 border-4 rounded-t-full card__button-suma"
     card_button_resta.className = "material-icons border-black text-black bg-white  hover:bg-gray-300 font-bold w-32 h-16 border-4 rounded-b-full card__button-resta"
 
@@ -253,11 +94,17 @@ export function createCard(product) {
   pokeball_buttons.append(card_button_suma, card_counter, card_button_resta)
 }
 
+export function loadToStorage() {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || []
+  updateCartCounter(carrito)
+  if (window.location.pathname === "/views/cart.html") {
+    mostrarCarrito(carrito)
+  }
+}
 
 export function sumar() {
   count++
   document.querySelector(".card__counter").textContent = count
-
 }
 
 export function restar() {
@@ -265,5 +112,85 @@ export function restar() {
     count--
     document.querySelector(".card__counter").textContent = count
   }
+}
+
+export function updateCartCounter(carrito) {
+  const cartCounter = document.getElementById("cart-counter")
+  const totalItems = carrito.reduce((total, item) => total + item.count, 0)
+  cartCounter.textContent = totalItems
+}
+
+export function mostrarCarrito(carrito) {
+  const containerCarrito = document.getElementById("carrito__container")
+  containerCarrito.innerHTML = ""
+  carrito.forEach((item) => {
+
+    const itemCarrito = document.createElement("div")
+    const infoItem = document.createElement("p")
+    const infoPrecio = document.createElement("p")
+    const imagenProducto = document.createElement("img")
+
+    itemCarrito.className = "flex itemCarrito inline-block mr-2 p-2 border border-gray-300 rounded"
+    infoItem.className = "text-xl font-bold mb-2"
+    infoPrecio.className = "text-xl font-bold mb-2"
+    imagenProducto.className = "w-52 h-52 mr-2"
+
+    infoItem.innerText = `${item.title} x ${item.count}`
+    infoPrecio.innerText = `$${item.price * item.count}`
+    imagenProducto.src = item.image
+    itemCarrito.append(imagenProducto, infoItem, infoPrecio)
+    containerCarrito.append(itemCarrito)
+    itemCarrito.append(infoItem)
+  })
+}
+
+export function finalizarCompra(e) {
+  e.preventDefault()
+  const nombre = document.getElementById("inputNombre").value
+  const email = document.getElementById("inputEmail").value
+  const direccion = document.getElementById("inputDireccion").value
+  const ciudad = document.getElementById("inputCiudad").value
+  const provincia = document.getElementById("inputProvincia").value
+  const mensaje = document.getElementById("textAreaMensaje").value
+
+  if (!nombre || !email || !direccion || !ciudad || !provincia) {
+    Notify.failure("Por favor, completa todos los campos obligatorios.");
+    return;
+  }
+
+  const pedido = {
+    nombre,
+    email,
+    direccion,
+    ciudad,
+    provincia,
+    mensaje,
+    carrito: carrito,
+  }
+
+  fetch(`https://2jlyy.wiremockapi.cloud/productos`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(pedido)
+  })
+    .then((response) => {
+      if (response.ok) {
+        carrito.length = 0
+        saveToStorage(carrito)
+        updateCartCounter(carrito)
+        mostrarCarrito(carrito)
+      } else {
+        Notify.failure("Ha ocurrido un error al realizar el pedido. Error: " + response.status);
+      }
+      return response.json()
+    })
+    .then((data) => {
+      Notify.success("Pedido realizado con éxito. ID de pedido: " + data.id);
+    })
+    .catch((error) => {
+      Notify.failure("Ha ocurrido un error, intentalo de nuevo. Error: " + error.message);
+    })
 }
 
