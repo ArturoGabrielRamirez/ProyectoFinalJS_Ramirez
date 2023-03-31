@@ -42,7 +42,7 @@ export function createCard(product) {
   card_title.className = "card__title text-2xl mb-2 truncate"
   card_price.className = "card__price text-sm"
   card_stock.className = "card__stock text-sm text-white"
-  card_button_cart.className = "card__button-cart material-icons text-white border border-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-4 py-2 text-center mt-2 dark:border-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 w-full block bg-red-900"
+  card_button_cart.className = "card__button-cart text-white border border-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-4 py-2 text-center mt-2 dark:border-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 w-full block bg-red-900"
   card_detail_link.className = "card__detail-link text-white border border-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-4 py-2 text-center mt-2 dark:border-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 w-full block bg-red-900"
 
   card_img.src = product.image
@@ -51,7 +51,7 @@ export function createCard(product) {
   card_price.innerText = `Precio: $${product.price} `
   card_stock.innerText = `Stock: ${product.stock} `
   card_detail_link.innerText = "More Details"
-  card_button_cart.innerText = "add_shopping_cart"
+  card_button_cart.innerText = "Agregar Al Carrito"
   card_detail_link.href = product.linkDetail
 
   let card_button_resta = ""
@@ -68,10 +68,11 @@ export function createCard(product) {
     card_detail_link = ""
 
     card_img.className = "bg-white w-full max-w-[500px] shadow-sm shadow-[rgba(0,0,0,0.5)]"
-    card.className = "flex mx-auto gap-7 shadow-sm shadow-[rgba(0,0,0,0.5)]"
+    card.className = "flex mx-auto gap-7 shadow-sm shadow-[rgba(0,0,0,0.5)] bg-white"
     card_detail.className = "card__detail"
-    pokeball_buttons.className = "flex flex-col w-32 mt-4 items-center justify-center pokeball__buttons relative "
+    pokeball_buttons.className = "flex flex-col m-auto w-32 mt-4 items-center justify-center pokeball__buttons "
     card_counter.className = "card__counter  absolute bg-white z-10 rounded-full border-black border-4 w-10 h-10 flex justify-center items-center font-bold"
+    card_content.className = "card__content p-2 bg-white"
     card_button_suma.className = "material-icons border-black text-white bg-red-700 hover:bg-red-500 font-bold w-32 h-16 border-4 rounded-t-full card__button-suma"
     card_button_resta.className = "material-icons border-black text-black bg-white  hover:bg-gray-300 font-bold w-32 h-16 border-4 rounded-b-full card__button-resta"
 
@@ -98,7 +99,7 @@ export function emptyCart() {
   localStorage.clear() 
 
   const containerCarrito= document.getElementById("carrito__container")
-  
+
   containerCarrito.innerHTML = ""
 }
 
