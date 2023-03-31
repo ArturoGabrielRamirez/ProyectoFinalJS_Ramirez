@@ -1,14 +1,8 @@
 # Proyecto Final de JavaScript
 
-Este proyecto utiliza Vite para manejar la construcción y el desarrollo del mismo. A continuación se explica cómo instalar Vite y cómo correr el proyecto.
+## Descripción
 
-## Instalación de Vite
-
-Para instalar Vite, primero asegúrese de tener Node.js (versión 12.0 o superior) instalado en su máquina. Luego ejecute el siguiente comando en su terminal para instalar Vite globalmente:
-
-```bash
-npm install -g create-vite
-```
+Este es el proyecto final para el curso de JavaScript de CoderHouse a cargo de la profesora Luciana Garro del alumno Arturo Gabriel Ramirez en el cual se utilizo Vite para manejar la construcción y el desarrollo del mismo. A continuación se explica cómo cómo correr el proyecto.
 
 ## Correr el proyecto
 
@@ -50,3 +44,12 @@ El proyecto ahora debe estar en ejecución en `http://localhost:5173/`
    - Si ocurre un error durante la solicitud, se muestra una notificación de error con el mensaje del error.
 
 Estas funciones trabajan juntas para proporcionar un flujo de compra completo y una experiencia de usuario fluida al interactuar con el carrito y finalizar la compra.
+
+## Se Vienen Cositas(ya veremos)
+
+- [ ] Agregar un botón de "Vaciar carrito" en la página "cart.html".
+- [ ] Agregar un botón de "Eliminar" en cada elemento del carrito para eliminar un elemento del carrito.
+- [ ] Agregar un botón de "Comprar más" en la página de éxito para volver a la página principal.
+- [ ] Agregar un botón de "Ver pedidos" en la página de éxito para ir a la página de pedidos.
+- [ ] Login... ah re manija xD
+
