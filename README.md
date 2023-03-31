@@ -53,3 +53,6 @@ Estas funciones trabajan juntas para proporcionar un flujo de compra completo y 
 - [ ] Agregar un botón de "Ver pedidos" en la página de éxito para ir a la página de pedidos.
 - [ ] Login... ah re manija xD
 
+## Deploy del Proyecto
+
+`https://proyecto-final-js-ramirez.vercel.app/`
