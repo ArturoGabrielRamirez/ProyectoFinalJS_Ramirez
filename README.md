@@ -47,8 +47,9 @@ Estas funciones trabajan juntas para proporcionar un flujo de compra completo y 
 
 ## Se Vienen Cositas(ya veremos)
 
-- [ ] Agregar un botón de "Vaciar carrito" en la página "cart.html".
-- [ ] Agregar un botón de "Eliminar" en cada elemento del carrito para eliminar un elemento del carrito.
+- [x] Agregar un botón de "Vaciar carrito" en la página "cart.html".
+- [x] Agregar un botón de "Eliminar" en cada elemento del carrito para eliminar un elemento del carrito.
+- [ ] Ocultar formulario y el boton de vaciar carrito si no se cuenta con productos cargados en el carrito.
 - [ ] Agregar un botón de "Comprar más" en la página de éxito para volver a la página principal.
 - [ ] Agregar un botón de "Ver pedidos" en la página de éxito para ir a la página de pedidos.
 - [ ] Login... ah re manija xD
