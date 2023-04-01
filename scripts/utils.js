@@ -1,6 +1,6 @@
 import { Notify } from "notiflix"
 
-export const carrito = localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : []
+export let carrito = localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : []
 export let count = 0
 
 export function saveToStorage(carrito) {
@@ -94,11 +94,13 @@ export function createCard(product) {
   card_content.append(card_title, card_detail, card_price, card_stock, pokeball_buttons, card_button_cart, card_detail_link)
   pokeball_buttons.append(card_button_suma, card_counter, card_button_resta)
 }
+
+
 export function emptyCart() {
   carrito.length = 0
-  localStorage.clear() 
+  localStorage.clear()
 
-  const containerCarrito= document.getElementById("carrito__container")
+  const containerCarrito = document.getElementById("carrito__container")
 
   containerCarrito.innerHTML = ""
 }
@@ -127,9 +129,10 @@ export function updateCartCounter() {
   const cartCounter = document.getElementById("cart-counter")
   const totalItems = carrito.reduce((total, item) => total + item.count, 0)
   cartCounter.textContent = totalItems
+  console.log(carrito)
 }
 
-export function mostrarCarrito(carrito) {
+export function mostrarCarrito(cart) {
   const containerCarrito = document.getElementById("carrito__container")
   containerCarrito.innerHTML = ""
   const buttonEmptyCart = document.createElement("button")
@@ -142,14 +145,28 @@ export function mostrarCarrito(carrito) {
     updateCartCounter()
   })
 
-
-
-  carrito.forEach((item) => {
-
+  cart.forEach((item) => {
+    const deleteButton = document.createElement("button")
+    deleteButton.className = "delete__button flex self-end w-24 text-white border border-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-4 py-2 text-center mt-2 dark:border-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 w-full block bg-red-900"
+    deleteButton.innerText = `Borrar ${item.title}`
     const itemCarrito = document.createElement("div")
     const infoItem = document.createElement("p")
     const infoPrecio = document.createElement("p")
     const imagenProducto = document.createElement("img")
+
+    deleteButton.addEventListener("click", () => {
+      const filteredArray = cart.filter((itemId) => {
+        if (item.id === itemId.id) {
+          return false
+        } else {
+          return true
+        }
+      })
+      carrito = filteredArray
+      localStorage.setItem("carrito", JSON.stringify(filteredArray))
+      mostrarCarrito(filteredArray)
+      updateCartCounter()
+    })
 
     itemCarrito.className = "flex itemCarrito inline-block mr-2 p-2 border border-gray-300 rounded"
     infoItem.className = "text-xl font-bold mb-2"
@@ -161,7 +178,7 @@ export function mostrarCarrito(carrito) {
     imagenProducto.src = item.image
 
 
-    itemCarrito.append(imagenProducto, infoItem, infoPrecio)
+    itemCarrito.append(imagenProducto, infoItem, infoPrecio, deleteButton)
 
     containerCarrito.append(itemCarrito)
   })
