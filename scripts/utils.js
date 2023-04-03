@@ -145,6 +145,9 @@ export function mostrarCarrito(cart) {
     updateCartCounter()
   })
 
+  let totalCarritoPrice = 0
+  const precioFinal = document.createElement("p")
+
   cart.forEach((item) => {
     const deleteButton = document.createElement("button")
     deleteButton.className = "delete__button flex self-end w-24 text-white border border-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-4 py-2 text-center mt-2 dark:border-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 w-full block bg-red-900"
@@ -173,6 +176,7 @@ export function mostrarCarrito(cart) {
     infoPrecio.className = "text-xl font-bold mb-2"
     imagenProducto.className = "w-52 h-52 mr-2"
 
+    totalCarritoPrice += item.price * item.count
     infoItem.innerText = `${item.title} x ${item.count}`
     infoPrecio.innerText = `$${item.price * item.count}`
     imagenProducto.src = item.image
@@ -182,11 +186,11 @@ export function mostrarCarrito(cart) {
 
     containerCarrito.append(itemCarrito)
   })
+  precioFinal.className="text-xl font-bold mb-2 flex self-auto"
+  precioFinal.innerText = `Total:$${totalCarritoPrice}`
 
-  containerCarrito.append(buttonEmptyCart)
+  containerCarrito.append(precioFinal, buttonEmptyCart)
 }
-
-
 
 export function finalizarCompra(e) {
   e.preventDefault()
